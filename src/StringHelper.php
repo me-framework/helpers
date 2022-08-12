@@ -1,5 +1,5 @@
 <?php
-namespace me\core\helpers;
+namespace me\helpers;
 /**
  * 
  */
