@@ -1,6 +1,9 @@
 <?php
 namespace me\helpers;
 use Exception;
+/**
+ * 
+ */
 class ArrayHelper extends Helper {
     /**
      * 
@@ -55,14 +58,23 @@ class ArrayHelper extends Helper {
         }
         return false;
     }
+    /**
+     * 
+     */
     public static function isTraversable($var) {
         return is_array($var) || $var instanceof \Traversable;
     }
+    /**
+     * 
+     */
     public static function AddIfNotExist(array &$array, $key, $value) {
         if (!isset($array[$key])) {
             $array[$key] = $value;
         }
     }
+    /**
+     * 
+     */
     public static function isIn($needle, $haystack, $strict = false) {
         if ($haystack instanceof \Traversable) {
             foreach ($haystack as $value) {

@@ -3,12 +3,21 @@ namespace me\helpers;
 use stdClass;
 use Exception;
 use me\model\Model;
+/**
+ * 
+ */
 class JsonHelper extends Helper {
+    /**
+     * 
+     */
     public static function encode($value) {
         $array = static::processData($value);
         $json  = json_encode($array);
         return $json;
     }
+    /**
+     * 
+     */
     public static function decode($json, $asArray = true) {
         if (is_array($json)) {
             throw new Exception('Invalid JSON data.');
@@ -19,6 +28,9 @@ class JsonHelper extends Helper {
         $decode = json_decode((string) $json, $asArray);
         return $decode;
     }
+    /**
+     * 
+     */
     protected static function processData($data) {
         if (is_object($data)) {
             /*
